@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Bienvenido
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,29 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Inicio</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div id="container1">
+    <ion-list>
+      <ion-item>
+        <ion-input labelPlacement="floating" type="">
+          <div slot="label">Usuario <ion-text color="danger">(Obligatorio)</ion-text></div>
+        </ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-input labelPlacement="floating" type="password">
+          <div slot="label">Contraseña <ion-text color="danger">(Obligatorio)</ion-text></div>
+        </ion-input>
+      </ion-item>
+    </ion-list>
+    <a href="https://i.pinimg.com/originals/75/e3/5b/75e35b44b83206246088464d2ef3a017.jpg">¿Olvidaste tu contraseña?</a>
+    <ion-item>
+      <ion-button (click)="inicio()" color="success" size="medium" shape="round">Iniciar Sesion</ion-button>
+      <ion-button color="warning" size="medium" shape="round">Registrarse</ion-button>
+    </ion-item>
   </div>
 </ion-content>

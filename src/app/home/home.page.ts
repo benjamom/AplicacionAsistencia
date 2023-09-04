@@ -7,6 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  usuario = "admin";
+
   constructor() {}
+
+  ngOnInit(){
+  }
+
+  inicio(){
+    localStorage.setItem('usuario', this.usuario)
+  }
 
 }
