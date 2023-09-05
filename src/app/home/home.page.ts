@@ -7,15 +7,27 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  usuario = "admin";
 
-  constructor() {}
 
-  ngOnInit(){
+  constructor() { }
+
+  nombre: string = "";
+  clave: string = "";
+
+  ngOnInit() {
   }
 
-  inicio(){
-    localStorage.setItem('usuario', this.usuario)
+  validarUsuario() {
+    const datosUsuario = localStorage.getItem('usuario');
+    const passUsuario = localStorage.getItem('password');
+    if (datosUsuario === this.nombre && passUsuario === this.clave) {
+      // Los datos coinciden, el usuario está autenticado
+      console.log('Inicio de sesión exitoso');
+      // Puedes realizar redirecciones u otras acciones aquí
+    } else {
+      // Los datos no coinciden, mostrar mensaje de error o tomar medidas apropiadas
+      console.log('Nombre de usuario o contraseña incorrectos');
+      
+    }
   }
-
 }

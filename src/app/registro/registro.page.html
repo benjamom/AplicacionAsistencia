@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro de usuario</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-col>
+      <ion-input [(ngModel)]="usuario" type="text" placeholder="pepe123">
+        <div slot="label">Usuario <ion-text color="danger">(Required)</ion-text></div>
+      </ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-input [(ngModel)]="password"  type="password" placeholder="4 caracteres">
+        <div slot="label">Contraseña <ion-text color="danger">(Required)</ion-text></div>
+      </ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-input type="number" placeholder="9 caracateres" maxlength="9" minlength="1">
+        <div slot="label">Numero <ion-text color="success">(+56)</ion-text></div>
+      </ion-input>
+    </ion-col>
+    <ion-row>
+      <ion-button (click)="inicio()"  routerLink="/home" color="warning" size="medium" shape="round">Guardar</ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>
