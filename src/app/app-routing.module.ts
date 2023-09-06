@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
+    path: 'home',
     redirectTo: 'home',
     pathMatch: 'full'
   },
@@ -20,6 +20,16 @@ const routes: Routes = [
     redirectTo: 'registro',
     pathMatch: 'full'
   },
+  {
+    path: 'envio',
+    loadChildren: () => import('./envio/envio.module').then( m => m.EnvioPageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'envio',
+    pathMatch: 'full'
+  },
+
 ];
 
 @NgModule({

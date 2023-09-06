@@ -20,8 +20,18 @@
       </ion-input>
     </ion-col>
     <ion-col>
-      <ion-input type="number" placeholder="9 caracateres" maxlength="9" minlength="1">
-        <div slot="label">Numero <ion-text color="success">(+56)</ion-text></div>
+      <ion-input [(ngModel)]="carrera" type="text" placeholder="Informatica">
+        <div slot="label">Carrera</div>
+      </ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-input [(ngModel)]="name" type="text">
+        <div slot="label">Nombre <ion-text color="success">(Juanito)</ion-text></div>
+      </ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-input [(ngModel)]="lastname" type="text" >
+        <div slot="label">Apellido <ion-text color="success">(Perez)</ion-text></div>
       </ion-input>
     </ion-col>
     <ion-row>

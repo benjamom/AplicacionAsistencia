@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Enviar asistencia</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/home">Volver</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Nombre: {{name}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Apellido: {{lastname}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Carrera: {{carrera}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button routerLink="/home" color="danger" shape="round" >Desconectar</ion-button>
+</ion-content>
