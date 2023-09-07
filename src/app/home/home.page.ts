@@ -20,6 +20,11 @@ export class HomePage {
   ngOnInit() {
   }
 
+  clearFields(){
+    this.nombre = '';
+    this.clave = '';
+  }
+
   async mostrarAlertaClaveInvalida() {
     const alert = await this.alertController.create({
       header: 'Inicio de Sesion Fallido',
@@ -27,6 +32,7 @@ export class HomePage {
       buttons: ['Aceptar']
     });
 
+    this.clearFields();
     await alert.present();
   }
 
