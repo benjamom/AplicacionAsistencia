@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import {Router} from '@angular/router';
+import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { IonModal } from '@ionic/angular';
+import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({
   selector: 'app-home',
@@ -8,19 +10,22 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  @ViewChild(IonModal)
+  modal!: IonModal;
 
 
 
 
-  constructor(private router : Router, private alertController: AlertController) { }
+  constructor(private router: Router, private alertController: AlertController) { }
 
   nombre: string = "";
   clave: string = "";
+  nuevaClave: string = "";
 
   ngOnInit() {
   }
 
-  clearFields(){
+  clearFields() {
     this.nombre = '';
     this.clave = '';
   }
@@ -49,7 +54,22 @@ export class HomePage {
       // Los datos no coinciden, mostrar mensaje de error o tomar medidas apropiadas
       console.log('Nombre de usuario o contraseña incorrectos');
       this.mostrarAlertaClaveInvalida();
-      
+
     }
   }
-}
+  cancel() {
+    this.modal.dismiss(null, 'cancel');
+  }
+
+  confirm() {
+    this.modal.dismiss(this.nuevaClave, 'confirm');
+  }
+
+  onWillDismiss(event: Event) {
+    const ev = event as CustomEvent<OverlayEventDetail<string>>;
+    if (ev.detail.role === 'confirm') {
+      localStorage.setItem('password',this.nuevaClave );
+      console.log("Clave actualizada")
+    }
+  }
+}  

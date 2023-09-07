@@ -22,21 +22,8 @@
   </ion-list>
   <div class="ion-text-center ion-margin-top">
   <ion-button routerLink="/home" color="danger" shape="round" >Desconectar</ion-button>
-  <ion-button (click)="scan()" color="success" shape="round" >Marcar asistencia</ion-button>
+  <ion-button  color="success" shape="round" >Marcar asistencia</ion-button>
   </div>
-
-
-  <ion-list>
-    <ion-item *ngFor="let barcode of barcodes">
-      <ion-label position="stacked">{{ barcode.format }}</ion-label>
-      <ion-input type="text" [value]="barcode.rawValue"></ion-input>
-    </ion-item>
-  </ion-list>
-  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
-    <ion-fab-button  [disabled]="!isSupported">
-      <ion-icon name="scan"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
 
 
 </ion-content>

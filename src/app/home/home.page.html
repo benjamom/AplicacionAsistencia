@@ -28,10 +28,36 @@
         </ion-input>
       </ion-item>
     </ion-list>
-    <a href="https://i.pinimg.com/originals/75/e3/5b/75e35b44b83206246088464d2ef3a017.jpg">¿Olvidaste tu contraseña?</a>
-    <ion-item>
-      <ion-button  (click)="validarUsuario()" color="success" size="medium" shape="round">Iniciar Sesion</ion-button>
+    <ion-item class="ion-text-center ion-margin-top">
+      <ion-button (click)="validarUsuario()" color="success" size="medium" shape="round">Iniciar Sesion</ion-button>
       <ion-button routerLink="/registro" color="warning" size="medium" shape="round">Registrarse</ion-button>
+    </ion-item>
+    <ion-item class="ion-text-center ion-margin-top">
+      <ion-button id="open-modal" color="danger" shape="round" size="medium">Cambiar contraseña</ion-button>
+    </ion-item>
+
+    <ion-item>
+      <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-buttons slot="start">
+                <ion-button (click)="cancel()">Cancelar</ion-button>
+              </ion-buttons>
+              <ion-title>Actualizemos tu contraseña</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <ion-item>
+              <ion-label position="stacked">Nueva contraseña</ion-label>
+              <ion-input type="password" placeholder="Ingresa tu nueva contraseña" [(ngModel)]="nuevaClave"></ion-input>
+            </ion-item>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
     </ion-item>
   </div>
 </ion-content>
