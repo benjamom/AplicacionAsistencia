@@ -28,7 +28,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'envio',
     pathMatch: 'full'
+  },  {
+    path: 'escaneo',
+    loadChildren: () => import('./escaneo/escaneo.module').then( m => m.EscaneoPageModule)
   },
+
 
 ];
 

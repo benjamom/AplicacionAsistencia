@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-envio',
@@ -14,7 +15,7 @@ export class EnvioPage implements OnInit {
 
   isSupported = false;
 
-  constructor(private alertController: AlertController) { }
+  constructor(private router: Router, private alertController: AlertController) { }
 
   ngOnInit() {
 
